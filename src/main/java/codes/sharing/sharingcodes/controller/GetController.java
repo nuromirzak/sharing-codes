@@ -1,0 +1,53 @@
+package codes.sharing.sharingcodes.controller;
+
+import codes.sharing.sharingcodes.model.Code;
+import codes.sharing.sharingcodes.service.CodeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.Controller;
+
+import java.util.List;
+
+@Controller
+public class GetController {
+    private final CodeService codeService;
+
+    public GetController(@Autowired CodeService codeService) {
+        this.codeService = codeService;
+    }
+
+    @GetMapping("/code/{N}")
+    public String getNthCode(@PathVariable String N, Model model) {
+        try {
+            Code currentCode = codeService.getById(N);
+            model.addAttribute("pieceOfCode", currentCode);
+            return "getcode";
+        } catch (Exception e) {
+            model.addAttribute("error", e.getMessage());
+            return "customerror";
+        }
+    }
+
+    @GetMapping(value = {"/code/new", "/"})
+    public String createHtmlCode(Model model) {
+        return "index";
+    }
+
+    @GetMapping("/code/latest")
+    public String getLatestHtmlCodes(Model model) {
+        List<Code> newCodes = codeService.getLatestNCode(10);
+        model.addAttribute("latestCodes", newCodes);
+        return "recent";
+    }
+
+    @GetMapping("/code/about")
+    public String getAboutPage() {
+        return "about";
+    }
+
+    @GetMapping("/code/usage")
+    public String getUsage() {
+        return "usage";
+    }
+}

@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+body {
+    height: 100%;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#code_snippet {
+    font-size: 1.25rem;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+textarea#code_snippet {
+    min-height: calc(100vh / 3);
+}
+
+#usage {
+    line-height: 2;
+}
