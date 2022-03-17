@@ -22,13 +22,13 @@
 
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">Sharing <img src="/imgs/code-pngrepo-com.png" alt="" style="height: 1em;"> Codes</a>
+    <a class="navbar-brand" href="/">Sharing <img src=" /imgs/code-pngrepo-com.png" alt="" style="height: 1em;"> Codes</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <ul class="navbar-nav mr-auto">
-            <li><a class="nav-link" href="/code/recent">Recent codes</a></li>
+            <li><a class="nav-link" href="/code/latest">Recent codes</a></li>
             <li><a class="nav-link" href="/code/usage">Usage</a></li>
             <li><a class="nav-link" href="/code/about">About</a></li>
         </ul>
