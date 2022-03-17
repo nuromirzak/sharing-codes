@@ -15,7 +15,7 @@ public class Code {
     @Column(name = "id", updatable = false, nullable = false)
     private String id = String.valueOf(UUID.randomUUID());
 
-    @Column(name = "code")
+    @Column(name = "code", columnDefinition = "VARCHAR(4096)")
     private String code;
 
     @Column(name = "date")
