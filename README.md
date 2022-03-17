@@ -117,7 +117,7 @@ simply open an issue with the tag "enhancement". Don't forget to give the projec
 
 ## License
 
-Distributed under the MIT License. See `LICENSE.md` for more information.
+Distributed under the MIT License. See `LICENSE` for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -151,7 +151,7 @@ Project Link: [https://github.com/nuromirzak/sharing-codes](https://github.com/n
 
 [license-shield]: https://img.shields.io/github/license/nuromirzak/sharing-codes.svg?style=for-the-badge
 
-[license-url]: https://github.com/nuromirzak/sharing-codes/blob/master/LICENSE.md
+[license-url]: https://github.com/nuromirzak/sharing-codes/blob/master/LICENSE
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 
