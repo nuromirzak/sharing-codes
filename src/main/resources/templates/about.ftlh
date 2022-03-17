@@ -45,7 +45,7 @@
         <li>Gradle (Build)</li>
         <li>Spring Boot (MVC, Boot)</li>
         <li>Bootstrap (CSS)</li>
-        <li>Thymeleaf (HTML template engine)</li>
+        <li>Freemarker (HTML template engine)</li>
         <li>highlight.js (Syntax highlighting for the Web)</li>
     </ul>
 </div>
