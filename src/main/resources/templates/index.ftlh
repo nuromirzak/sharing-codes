@@ -40,6 +40,7 @@
             <div class="alert alert-success success-message" role="alert" style="display: none;">
                 <h4 class="alert-heading">Well done!</h4>
                 <p>Your UUID code is <span id="uuid">a947b880-3848-4e69-9255-4d8c6c2b8354</span>. Don't lose it, it's very important!</p>
+                <a id="uuid-link" href="#">Go to the code page</a>
             </div>
             <div class="alert alert-danger danger-message" role="alert" style="display: none;">
                 <h4 class="alert-heading">Oops!...</h4>

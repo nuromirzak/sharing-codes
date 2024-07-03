@@ -46,6 +46,9 @@ function send() {
         document.querySelector("form").reset();
         let uuid = document.querySelector("span#uuid");
         uuid.innerHTML = JSON.parse(xhr.responseText).id;
+        let uuid_link = document.querySelector("a#uuid-link")
+        const currentUrl = window.location.href;
+        uuid_link.href = currentUrl + "code/" + JSON.parse(xhr.responseText).id
     } else {
         dangerMessage.style.display = "block";
         successMessage.style.display = "none";
