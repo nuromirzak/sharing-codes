@@ -42,7 +42,7 @@
 
 <div class="container p-3">
     <h1 class="display-6">${pieceOfCode.getId()}</h1>
-    <span id="load_date">${pieceOfCode.getDate()}</span>
+    <span id="load_date">Date: ${dateDTO.getDateFormat()}, time: ${dateDTO.getTimeFormat()}</span>
     <#if pieceOfCode.isTimeLimit()>
         <br>
         <small>The code will be available for <u><span id="time_restriction">${pieceOfCode.getTime()}</span></u> seconds</small>
