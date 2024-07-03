@@ -1,5 +1,6 @@
 package codes.sharing.sharingcodes.service;
 
+import codes.sharing.sharingcodes.dto.DateDTO;
 import codes.sharing.sharingcodes.model.Code;
 
 import java.util.List;
@@ -17,4 +18,6 @@ public interface CodeService {
     public void deleteById(String id);
 
     public List<Code> superGetAll();
+
+    public DateDTO formatDate(String date);
 }

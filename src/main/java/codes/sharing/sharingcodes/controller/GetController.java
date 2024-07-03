@@ -1,5 +1,6 @@
 package codes.sharing.sharingcodes.controller;
 
+import codes.sharing.sharingcodes.dto.DateDTO;
 import codes.sharing.sharingcodes.model.Code;
 import codes.sharing.sharingcodes.service.CodeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class GetController {
@@ -21,7 +23,9 @@ public class GetController {
     public String getNthCode(@PathVariable String N, Model model) {
         try {
             Code currentCode = codeService.getById(N);
+            DateDTO dateDTO = codeService.formatDate(currentCode.getDate());
             model.addAttribute("pieceOfCode", currentCode);
+            model.addAttribute("dateDTO", dateDTO);
             return "getcode";
         } catch (Exception e) {
             model.addAttribute("error", e.getMessage());
