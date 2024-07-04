@@ -1,5 +1,6 @@
 package codes.sharing.sharingcodes.service;
 
+import codes.sharing.sharingcodes.dto.DateDTO;
 import codes.sharing.sharingcodes.exceptions.NotFoundSnippet;
 import codes.sharing.sharingcodes.model.Code;
 import codes.sharing.sharingcodes.repository.CodeRepository;
@@ -10,6 +11,8 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Service
 public class CodeServiceImpl implements CodeService{
@@ -91,5 +94,25 @@ public class CodeServiceImpl implements CodeService{
         }
 
         repo.save(code);
+    }
+
+    @Override
+    public DateDTO formatDate(String date) throws IllegalArgumentException {
+        String dateFormat;
+        String timeFormat;
+
+        Pattern patternDate = Pattern.compile("^.*?(?=T)");
+        Matcher matcherDate = patternDate.matcher(date);
+        Pattern patternTime = Pattern.compile("(?<=T)([^.]+)");
+        Matcher matcherTime = patternTime.matcher(date);
+
+        if (matcherDate.find() && matcherTime.find()) {
+            dateFormat = matcherDate.group();
+            timeFormat = matcherTime.group();
+        } else {
+            throw new IllegalArgumentException(String.format("Invalid string date: %s", date));
+        }
+
+        return new DateDTO(dateFormat, timeFormat);
     }
 }
