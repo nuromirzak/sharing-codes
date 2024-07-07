@@ -36,6 +36,9 @@ public class Code {
     @Column(name = "timelimit")
     private boolean timeLimit;
 
+    @Column(name = "password")
+    private String password;
+
     public Code() {
 
     }
@@ -53,6 +56,7 @@ public class Code {
         if (this.time > 0) {
             this.timeLimit = true;
         }
+        this.password = code.getPassword() == null ? "" : code.getPassword();
     }
 
     public String getId() {
@@ -130,5 +134,13 @@ public class Code {
         } else {
             return getCode();
         }
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

@@ -60,7 +60,18 @@
                     <small class="form-text text-muted">This will allow viewing a code snippet for a certain period of time, and after its expiration, the code snippet is deleted from the database.</small>
                 </div>
             </div>
+            <p></p>
             <button id="send_snippet" type="submit" class="btn btn-primary">Submit</button>
+            <button id="set_password" type="button" class="btn btn-outline-primary" data-toggle="collapse" href="#collapsePassword" role="button" aria-expanded="false" aria-controls="collapsePassword">Set password</button>
+            <p></p>
+            <div class="collapse" id="collapsePassword">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Password</span>
+                    </div>
+                    <input type="text" class="form-control" id="password_field" aria-label="Password input" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
         </div>
     </form>
 </div>

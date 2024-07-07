@@ -20,9 +20,16 @@ public class GetController {
     }
 
     @GetMapping("/code/{N}")
-    public String getNthCode(@PathVariable String N, Model model) {
+    public String getNthCode(@PathVariable String N, @RequestParam(value = "password", required = false) String password, Model model) {
         try {
             Code currentCode = codeService.getById(N);
+
+            if (password == null) password = "";
+            if (!password.equals(currentCode.getPassword())) {
+                return "password";
+            }
+            codeService.refreshCode(currentCode);
+
             DateDTO dateDTO = codeService.formatDate(currentCode.getDate());
             model.addAttribute("pieceOfCode", currentCode);
             model.addAttribute("dateDTO", dateDTO);

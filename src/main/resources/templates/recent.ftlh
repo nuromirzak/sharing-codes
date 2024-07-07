@@ -42,7 +42,11 @@
                     <h5 class="mb-1">${pieceOfCode.getId()}</h5>
                     <small class="text-muted"><span id="load_date">${pieceOfCode.date}</span></small>
                 </div>
-                <p class="mb-1">${pieceOfCode.shortCode()}</p>
+                <#if !pieceOfCode.getPassword()?has_content>
+                    <p class="mb-1">${pieceOfCode.shortCode()}</p>
+                <#else>
+                    <p class="mb-1">This is an encrypted code snippet.</p>
+                </#if>
             </a>
         </#list>
     </div>
