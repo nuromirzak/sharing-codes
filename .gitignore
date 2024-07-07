@@ -38,3 +38,6 @@ out/
 
 ### H2 Database ###
 *.db
+
+### macOS files ###
+.DS_Store
