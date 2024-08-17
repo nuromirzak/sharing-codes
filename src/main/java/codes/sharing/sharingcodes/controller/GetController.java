@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
 
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 public class GetController {
@@ -41,7 +40,7 @@ public class GetController {
     }
 
     @GetMapping(value = {"/code/new", "/"})
-    public String createHtmlCode(Model model) {
+    public String createHtmlCode() {
         return "index";
     }
 

@@ -1,8 +1,6 @@
 let dangerMessage;
 let errorCode;
 let successMessage;
-let obj;
-
 window.onload = function() {
     let form = document.querySelector("form");
 
@@ -41,7 +39,7 @@ function send() {
         return;
     }
 
-    if (xhr.status == 200) {
+    if (xhr.status === 200) {
         successMessage.style.display = "block";
         dangerMessage.style.display = "none";
         document.querySelector("form").reset();
@@ -54,29 +52,29 @@ function send() {
         dangerMessage.style.display = "block";
         successMessage.style.display = "none";
         errorCode.innerHTML = xhr.status + " " + xhr.statusText;
-        return;
     }
 }
 
 function check() {
     const codeId = location.pathname.substring(6);
-    var object = {
+    const object = {
         "password": document.getElementById("password_field").value,
         "id": codeId
     };
     let json = JSON.stringify(object);
 
+    let xhr;
     try {
         xhr = new XMLHttpRequest();
         xhr.open("POST", '/api/code/password', false)
         xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
         xhr.send(json);
 
-        var url = location.protocol + '//' + location.host + location.pathname + '?password=' + object.password;
+        const url = location.protocol + '//' + location.host + location.pathname + '?password=' + object.password;
 
-        if (xhr.status == 200) {
+        if (xhr.status === 200) {
             window.location.href = url;
-        } else if (xhr.status == 400){
+        } else if (xhr.status === 400) {
             dangerMessage.style.display = "block";
         } else {
             window.location.href = url;

@@ -23,7 +23,7 @@
 
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/">Sharing <img src=" /imgs/code-pngrepo-com.png" alt="" style="height: 1em;"> Codes</a>
+    <a class="navbar-brand" href="/">Sharing <img src="/imgs/code-pngrepo-com.png" alt="" style="height: 1em;"> Codes</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -51,7 +51,7 @@
     <#if pieceOfCode.isViewsLimit()>
         <br>
         <#if pieceOfCode.getViews() == 0>
-            <small><u><span id="views_restriction">No more views allowed</small>
+            <small><u><span id="views_restriction">No more views allowed</span></u></small>
         <#else>
             <small><u><span id="views_restriction">${pieceOfCode.getViews()}</span></u> more views allowed</small>
         </#if>

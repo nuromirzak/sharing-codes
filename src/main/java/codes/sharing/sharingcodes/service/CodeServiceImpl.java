@@ -1,7 +1,6 @@
 package codes.sharing.sharingcodes.service;
 
 import codes.sharing.sharingcodes.dto.DateDTO;
-import codes.sharing.sharingcodes.dto.PasswordDTO;
 import codes.sharing.sharingcodes.exceptions.NotFoundSnippet;
 import codes.sharing.sharingcodes.model.Code;
 import codes.sharing.sharingcodes.repository.CodeRepository;
@@ -63,21 +62,6 @@ public class CodeServiceImpl implements CodeService{
         }
 
         return newCodes;
-    }
-
-    @Override
-    public boolean isExist(String id) {
-        return repo.existsById(id);
-    }
-
-    @Override
-    public void deleteById(String id) {
-        repo.deleteById(id);
-    }
-
-    @Override
-    public List<Code> superGetAll() {
-        return (List<Code>) repo.findAll();
     }
 
     private void refresh(Code code) {

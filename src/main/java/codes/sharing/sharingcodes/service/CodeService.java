@@ -1,26 +1,18 @@
 package codes.sharing.sharingcodes.service;
 
 import codes.sharing.sharingcodes.dto.DateDTO;
-import codes.sharing.sharingcodes.dto.PasswordDTO;
 import codes.sharing.sharingcodes.model.Code;
 
 import java.util.List;
 
 public interface CodeService {
+    Code getById(String id);
 
-    public Code getById(String id);
+    void putCode(Code newCode);
 
-    public void putCode(Code newCode);
+    void refreshCode(Code code);
 
-    public void refreshCode(Code code);
+    List<Code> getLatestNCode(int n);
 
-    public List<Code> getLatestNCode(int n);
-
-    public boolean isExist(String id);
-
-    public void deleteById(String id);
-
-    public List<Code> superGetAll();
-
-    public DateDTO formatDate(String date);
+    DateDTO formatDate(String date);
 }
