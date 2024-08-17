@@ -1,12 +1,15 @@
 package codes.sharing.sharingcodes.controller;
 
+import codes.sharing.sharingcodes.dto.PasswordDTO;
 import codes.sharing.sharingcodes.model.Code;
 import codes.sharing.sharingcodes.service.CodeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
 
+import java.util.HashMap;
 import java.util.Map;
 
 @Controller
@@ -39,5 +42,16 @@ public class PostController {
     @ResponseBody
     public Object getLatestApiCodes() {
         return codeService.getLatestNCode(10);
+    }
+
+    @PostMapping(value = "/api/code/password", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public ResponseEntity<Object> checkPassword(@RequestBody PasswordDTO passwordDTO) {
+        Code currentCode = codeService.getById(passwordDTO.getId());
+        if (currentCode.getPassword().equals(passwordDTO.getPassword())) {
+            return ResponseEntity.ok().build();
+        } else {
+            return ResponseEntity.badRequest().build();
+        }
     }
 }
